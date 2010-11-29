@@ -24,7 +24,7 @@ $config['base_url'] = BASE_URL;
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -324,9 +324,6 @@ function __autoload($class)
 {
 	if(strpos($class, 'CI_') !== 0)
 	{
-            if(file_exists( APPPATH . 'libraries/'. $class . EXT ))
-            {
-                @include_once( APPPATH . 'libraries/'. $class . EXT );
-            }
+		@include_once( APPPATH . 'libraries/'. $class . EXT );
 	}
 }
